@@ -31,6 +31,25 @@ namespace convert_big_endian_to_little_endian
             return res;
         }
 
-
+        static void Main(string[] args)
+        {
+            int little = 2777;
+            int big = ReverseBytes(little);
+            string sLittle = IntToBinaryString(little);
+            string sBig = IntToBinaryString(big);
+            int oLittle = ReverseBytes(big);
+            string oString = IntToBinaryString(oLittle);
+            Console.WriteLine("Original (Intel) little endian value = "
+              + little);
+            Console.WriteLine("Original value as binary string = "
+              + sLittle);
+            Console.WriteLine("");
+            Console.WriteLine("Reversed big endian value = "
+              + big);
+            Console.WriteLine("Reversed value as string = "
+              + sBig);
+            Console.WriteLine("");
+            Console.ReadLine();
+        }
     }
 }
